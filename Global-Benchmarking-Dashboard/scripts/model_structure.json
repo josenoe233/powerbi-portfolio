@@ -1,0 +1,54 @@
+{
+  "model": {
+    "fact_table": "FactSurveyResponses",
+    "dimensions": [
+      {
+        "name": "DimAge",
+        "key": "Q10 - Current Age"
+      },
+      {
+        "name": "DimGender",
+        "key": "Q9 - Male/Female?"
+      },
+      {
+        "name": "DimCountry",
+        "key": "Q11 - Which Country do you live in?"
+      },
+      {
+        "name": "DimEducation",
+        "key": "Q12 - Highest Level of Education"
+      },
+      {
+        "name": "DimEthnicity",
+        "key": "Q13 - Ethnicity"
+      }
+    ],
+    "relationships": [
+      {
+        "from": "DimAge[Q10 - Current Age]",
+        "to": "FactSurveyResponses[Q10 - Current Age]",
+        "type": "one-to-many"
+      },
+      {
+        "from": "DimGender[Q9 - Male/Female?]",
+        "to": "FactSurveyResponses[Q9 - Male/Female?]",
+        "type": "one-to-many"
+      },
+      {
+        "from": "DimCountry[Q11 - Which Country do you live in?]",
+        "to": "FactSurveyResponses[Q11 - Which Country do you live in?]",
+        "type": "one-to-many"
+      },
+      {
+        "from": "DimEducation[Q12 - Highest Level of Education]",
+        "to": "FactSurveyResponses[Q12 - Highest Level of Education]",
+        "type": "one-to-many"
+      },
+      {
+        "from": "DimEthnicity[Q13 - Ethnicity]",
+        "to": "FactSurveyResponses[Q13 - Ethnicity]",
+        "type": "one-to-many"
+      }
+    ]
+  }
+}

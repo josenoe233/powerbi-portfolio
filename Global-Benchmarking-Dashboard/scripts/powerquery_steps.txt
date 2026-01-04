@@ -1,0 +1,48 @@
+---------------------------
+GLOBAL BENCHMARKING DASHBOARD
+Documentación Power Query 
+Autor: José Noé S.
+Fecha: 2025
+---------------------------
+				
+					 Pasos aplicados en la limpieza del dataset --
+
+1. Promoción de encabezados
+   Table.PromoteHeaders(Source)
+
+
+2. Eliminación de columnas innecesarias
+   Table.RemoveColumns(#"Headers Promoted", {"Email", "Time Taken"})
+
+
+3. Cambio de tipo de datos
+   Table.TransformColumnTypes(...)
+
+
+4. Eliminación de espacios y valores en blanco
+   Table.SelectRows(...)
+
+
+5. Limpieza de Ethnicity:
+   - Reemplazo de "Other (Please Specify):"
+   - Normalización de casos especiales
+   - Eliminación de valores vacíos
+
+
+6. Creación de tablas dimensión:
+   - DimAge → Q10
+   - DimGender → Q9
+   - DimCountry → Q11
+   - DimEducation → Q12
+   - DimEthnicity → Q13
+
+
+7. Eliminación de duplicados en dimensiones
+   Table.Distinct(#"Removed Columns", {"Ethnicity"})
+
+
+8. Modelo Estrella construido alrededor de FactSurveyResponses
+
+
+
+

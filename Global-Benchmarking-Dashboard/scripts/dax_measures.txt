@@ -1,0 +1,66 @@
+---------------------------
+GLOBAL BENCHMARKING DASHBOARD
+Medidas DAX del proyecto
+Autor: Jose Noé S.
+Fecha: 2025
+---------------------------
+
+1. Total Respondents
+	Total Respondents =
+	COUNTROWS(FactSurveyResponses)
+
+
+2. Average Age
+	Average Age =
+	AVERAGE(FactSurveyResponses[Q10 - Current Age])
+
+
+3. Average Salary
+	Average Salary =
+	AVERAGE(FactSurveyResponses[Average salary])
+
+
+4. Happiness Salary
+	Happiness Salary =
+	AVERAGE(FactSurveyResponses[
+    	Q6 - How Happy are you in your Current Position with the following? (Salary)
+	])
+
+
+5. Happiness Work-Life Balance
+	Happiness WorkLife =
+	AVERAGE(FactSurveyResponses[
+        Q6 - How Happy are you in your Current Position with the following? (Work/Life Balance)
+	])
+
+
+6. Happiness Coworkers
+	Happiness Coworkers =
+	AVERAGE(FactSurveyResponses[
+        Q6 - How Happy are you in your Current Position with the following? (Coworkers)
+	])
+
+
+7. Happiness Management
+	Happiness Management =
+	AVERAGE(FactSurveyResponses[
+    	Q6 - How Happy are you in your Current Position with the following? (Management)
+	])
+
+
+8. Happiness Learning New Things
+	Happiness Learning =
+	AVERAGE(FactSurveyResponses[
+        Q6 - How Happy are you in your Current Position with the following? (Learning New Things)
+	])
+
+
+9. Salary by Gender
+	Average Salary by Gender =
+	AVERAGE(FactSurveyResponses[Average salary])
+
+
+10. Salary by Job Role
+	Average Salary by Job =
+	AVERAGE(FactSurveyResponses[Average salary])
+
