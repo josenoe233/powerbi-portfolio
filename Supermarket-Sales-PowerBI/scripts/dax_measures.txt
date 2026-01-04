@@ -1,0 +1,40 @@
+==========================
+DAX MEASURES – SUPERMARKET SALES
+==========================
+
+Total Sales =
+SUM ( FactSales[Total] )
+
+Total Quantity =
+SUM ( FactSales[Quantity] )
+
+Total Gross Income =
+SUM ( FactSales[gross income] )
+
+Average Ticket =
+DIVIDE(
+    [Total Sales],
+    DISTINCTCOUNT ( FactSales[Invoice ID] )
+)
+
+% Quantity Share =
+DIVIDE(
+    [Total Quantity],
+    CALCULATE(
+        [Total Quantity],
+        ALL ( DimProduct )
+    )
+)
+
+Highest Sold Product Line =
+VAR SummaryTable =
+    SUMMARIZE(
+        DimProduct,
+        DimProduct[Product line],
+        "Qty", [Total Quantity]
+    )
+RETURN
+    MAXX(
+        TOPN(1, SummaryTable, [Qty], DESC),
+        DimProduct[Product line]
+    )

@@ -1,0 +1,18 @@
+POWER QUERY – DATA TRANSFORMATION STEPS
+
+1. Imported CSV dataset (supermarket_sales)
+2. Changed data types for all numeric and date fields
+3. Standardized Date column to Date type
+4. Created DimDate table:
+   - Year
+   - Month (number)
+   - Month Name
+   - Quarter
+5. Removed duplicates in dimension tables:
+   - DimProduct
+   - DimCustomer
+   - DimPayment
+   - DimBranch
+6. Kept FactSales with transactional grain
+7. Validated no nulls affecting relationships
+

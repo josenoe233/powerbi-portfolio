@@ -1,0 +1,22 @@
+DATA MODEL – STAR SCHEMA
+
+Fact Table:
+- FactSales
+  Grain: One row per transaction (Invoice ID)
+
+Dimensions:
+- DimDate (Date hierarchy)
+- DimProduct (Product line)
+- DimCustomer (Customer type, Gender)
+- DimPayment (Payment method)
+- DimBranch (Branch, City)
+
+Relationships:
+- All dimensions have 1:* relationship to FactSales
+- Single-direction filtering
+- No relationships between dimensions
+
+Design Rationale:
+This star schema improves query performance,
+simplifies DAX calculations,
+and follows Power BI best practices.
