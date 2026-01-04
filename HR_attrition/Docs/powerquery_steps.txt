@@ -1,0 +1,4 @@
+1. Cambio de tipos de datos
+2. Creación de AgeGroup
+3. Limpieza de valores nulos
+4. Creación de columnas derivadas
